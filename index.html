@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Vlad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            background-color: rgb(235, 235, 227);
+        }
+
+        #sidebar
+        {
+            width: 15%;
+            background-color: rgb(225, 224, 206);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: fixed;
+        }
+
+        #sidebar ul
+        {
+            padding-top: 60px;
+            padding-left: 65px;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            background-color: rgb(235, 235, 227);
+            text-align: center;
+            margin-left: 15%;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            display: block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            list-style: none;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        #home-icon {
+            font-size: 40px;
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        #content img {
+            max-width: 50%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .year-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <ul>
+            <li><a href="#" onclick="loadYearPage('year7.html')">Year 7</a></li>
+            <li><a href="#" onclick="loadYearPage('year8.html')">Year 8</a></li>
+            <li><a href="#" onclick="loadYearPage('year9.html')">Year 9</a></li>
+            <li><a href="#" onclick="loadYearPage('year10.html')">Year 10</a></li>
+            <li><a href="#" onclick="loadYearPage('year11.html')">Year 11</a></li>
+            <li><a href="#" onclick="loadYearPage('year12.html')">Year 12</a></li>
+        </ul>
+        <a id="home-icon" href="#" onclick="loadHomePage()">🏠</a>
+    </div>
+    <div id="content">
+        <br>
+        <h1>Welcome to Mister Vlad's Learning Hub</h1>
+        <p>This is the home page. Click on the links on the left to explore different year levels and learn about programming and digital skills.</p>
+        <img src="digital.jpg" alt="Image description">
+    </div>
+
+    <script>
+        function loadHomePage()
+        {
+            document.getElementById('content').innerHTML = `<br>
+                <h1>Welcome to Mister Vlad's Learning Hub</h1>
+                <p>This is the home page. Click on the links on the left to explore different year levels and learn about programming and digital skills.</p>
+                <img src="digital.jpg" alt="Image description">
+            `;
+        }
+
+        function loadYearPage(url) {
+            document.getElementById('content').innerHTML = `
+                <iframe class="year-iframe" name="year-iframe" src="${url}"></iframe>
+            `;
+        }
+
+
+    </script>
+</body>
+</html>
